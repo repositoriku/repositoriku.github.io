@@ -16,6 +16,8 @@ section {
   background-color: #0c6efd;
   border-radius: 10px;
   height: 400px;
+  transform-style: preserve-3d;
+  overflow: visible;
 }
 
 .keyboard-box::before {
@@ -44,19 +46,19 @@ section {
   font-weight: bold;
   font-style: italic;
   top: 260px;
-  opacity: 1;
-  left: 500px;
+  opacity: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
   transition: 0.5s;
 }
 
 .keyboard-box:hover::after {
-  left: 50%;
-  transform: translate(-50%, 0);
   opacity: 0.5;
 }
 
 .keyboard-name {
   position: absolute;
+  transform: translate3d(0, 0, 50px);
   top: 0;
   width: 100%;
   color: #fff;
@@ -75,7 +77,7 @@ section {
   position: absolute;
   bottom: 0;
   left: 50%;
-  transform: translate(-50%, 0);
+  transform: translate3d(-50%, 0, 100px);
   opacity: 0;
   transition: 0.5s;
 }
@@ -89,11 +91,11 @@ section {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -52%);
+  transform: translate3d(-50%, -52%, 80px);
   max-width: 300px;
   transition: 0.5s;
 }
 
 .keyboard-box:hover .keyboard-img {
-  transform: translate(-50%, -50%) rotate(5deg) scale(1.2);
+  transform: translate3d(-50%, -50%, 100px) rotate(5deg) scale(1.2);
 }
